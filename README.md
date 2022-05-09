@@ -1,6 +1,6 @@
 # Welcome to Cinema-App
 ![](/Users/antonsmac/downloads/byc.svg )
-##Functions
+#Functions
 ___
 * /login/register user
 * /cinema-halls create/getAll
@@ -10,7 +10,7 @@ ___
 * /shopping-carts addToCart/getByUser 
 * /users getByEmail
 
-## 3 Layer-Architecture
+# 3 Layer-Architecture
 ___
  * DAO - Data access layer
  * Service - Application layer
