@@ -1,5 +1,5 @@
 # Welcome to Cinema-App
-![](/Users/antonsmac/downloads/byc.svg )
+
 # Functions
 ___
 * /login/register user
