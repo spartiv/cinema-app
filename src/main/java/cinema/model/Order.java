@@ -2,15 +2,15 @@ package cinema.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,9 +23,11 @@ public class Order {
     @JoinTable(name = "orders_tickets",
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "ticket_id"))
-    private List<Ticket> ticketList;
-    private LocalDateTime orderDateTime;
-    @OneToOne(fetch = FetchType.EAGER)
+    private List<Ticket> tickets;
+    @Column(name = "order_time")
+    private LocalDateTime orderTime;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Long getId() {
@@ -36,20 +38,20 @@ public class Order {
         this.id = id;
     }
 
-    public List<Ticket> getTicketList() {
-        return ticketList;
+    public List<Ticket> getTickets() {
+        return tickets;
     }
 
-    public void setTicketList(List<Ticket> ticketList) {
-        this.ticketList = ticketList;
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 
-    public LocalDateTime getOrderDateTime() {
-        return orderDateTime;
+    public LocalDateTime getOrderTime() {
+        return orderTime;
     }
 
-    public void setOrderDateTime(LocalDateTime orderDateTime) {
-        this.orderDateTime = orderDateTime;
+    public void setOrderTime(LocalDateTime orderTime) {
+        this.orderTime = orderTime;
     }
 
     public User getUser() {
@@ -64,9 +66,8 @@ public class Order {
     public String toString() {
         return "Order{"
                 + "id=" + id
-                + ", ticketList=" + ticketList
-                + ", orderDateTime=" + orderDateTime
-                + ", user=" + user
-                + '}';
+                + ", tickets=" + tickets
+                + ", orderTime=" + orderTime
+                + ", user=" + user + '}';
     }
 }
