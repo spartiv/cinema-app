@@ -1,6 +1,6 @@
 # Welcome to Cinema-App
 ![](/Users/antonsmac/downloads/byc.svg )
-#Functions
+# Functions
 ___
 * /login/register user
 * /cinema-halls create/getAll
@@ -17,7 +17,7 @@ ___
  * Controllers - Presentation layer
 
 ___
-#Technologies used
+# Technologies used
 ____
 * Java
 * Apache Tomcat - version 9.0.50
